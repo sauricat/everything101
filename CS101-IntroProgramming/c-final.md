@@ -254,22 +254,30 @@ int main() {
 ### Part C: Code Completion (15%)
 22. The output of the following code is: `Test 'x == 100' failed!` Complete the macro definition of `TEST_CASE` and `ASSERT_TRUE`. (5%)
 ```C
+#include <stdio.h>
+#include <stdlib.h>
+
 #define TEST_CASE(name) ____________________
 #define ASSERT_TRUE(cond) ____________________
 
 TEST_CASE(math_check) {
     int x = 5;
+
     ASSERT_TRUE(x > 0);
-    ASSERT_TRUE(x == 100);
+    if (x > 0)
+        ASSERT_TRUE(x == 100);
+    else
+        printf("Yes, x <= 0.\n");
 }
 
 int main() {
     math_check();
+    printf("Success!\n");
     return 0;
 }
 ```
 
-23. Complete the code. It should compile the same way as `enum Color { RED, GREEN, BLUE }; char *ColorNames[] = { "RED", "GREEN", "BLUE" };`. (5%)
+23. Complete the code. It should compile as if have defined `enum Color { RED, GREEN, BLUE }; char *ColorNames[] = { "RED", "GREEN", "BLUE" };`. (5%)
 ```C
 #define COLOR_TABLE \
     COLOR(RED)      \
@@ -288,6 +296,14 @@ char *ColorNames[] = {
 };
 #____________________
 
+#define COLOR(id) case id: return #id;
+
+const char* getColorName(enum Color c) {
+    switch(c) {
+        COLOR_TABLE
+        default: return "UNKNOWN";
+    }
+}
 ```
 
 24. Complete the code. It should print "DEBUG: This is a log." when and only when being compiled with `-DDEBUG` option (i.e., `DEBUG` is defined). (5%)
