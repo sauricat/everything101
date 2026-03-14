@@ -2,7 +2,7 @@
 
 Instructor: Charlotte Shao
 
-Updated 2026 March 13
+Updated 2026 March 14
 
 Programming paradigms are the styles and structures of abstraction on top of the implementations of computer programs. They often manifest in the design of programming languages. In this course, you will navigate through different programming paradigms, forming a holistic view of the syntactic differences between paradigms with an awareness of their respective applicable scenarios.
 
@@ -30,32 +30,55 @@ We will discuss the following topics:
    - Language: BASIC or C.
    - Project: Refactor the text adventure game from the previous module. Remove all `GOTO` statements and replace them entirely with strict structured control flow (`if/else`, `while` loops, and proper block scoping).
 
-5. Functions, Closures, and Effects
+5. Gotos revisited
+   - Extended Reading: "7. Centralized exiting of functions", _Linux Kernel Coding Style_.
+   - Language: C.
+   - Project: Memory allocation.
+
+6. Functions, Closures, and Effects
    - Extended Reading: John Hughes, _Why Functional Programming Matters_.
    - Language: Haskell.
    - Project: A text-processing utility (like a word frequency counter) using pure functions, `map`, `filter`, and `reduce`. State must be passed explicitly, demonstrating how closures capture environment without relying on global variables.
 
-6. Classes, Objects, Methods, and Messages
+7. Classes, Objects, Methods, and Messages
    - Extended Reading: Dan Ingalls, _Design Principles Behind Smalltalk_.
    - Language: Pharo (or gnu-smalltalk).
    - Project: A simulation of a simple ecosystem (e.g., a predator-prey grid). Focus entirely on message-passing: objects should not manipulate each other's internal states directly, but rather send messages requesting actions.
 
-7. Types, Traits, Patterns, and Prototypes
+8. Types, Traits, Patterns, and Prototypes
    - Extended Reading: Benjamin C. Pierce, _Types and Programming Languages_ (selected chapters). David Ungar and Randall B. Smith, _SELF: The Power of Simplicity_.
    - Language: Rust (first-half); Lua or ECMAscript (second-half).
    - Project: A two-part shape-drawing API. First, use Lua to build a hierarchy of shapes using prototype delegation. Second, use Rust to implement a similar API using strict traits and pattern matching to handle different shape behaviors.
 
-8. Facts, Rules, and Relations
+9. Facts, Rules, and Relations
    - Extended Reading: Leon Sterling and Ehud Shapiro, _The Art of Prolog_.
    - Language: Prolog.
    - Project: A simple logic-puzzle solver. A classic application is feeding the system a set of familial relations (parent, sibling) and writing rules to let the language autonomously deduce complex relations (e.g., second cousin once removed).
 
-9. Macros and Homoiconicity
-   - Extended Reading: Paul Graham, _The Roots of Lisp_.
-   - Language: Common Lisp or Clojure.
-   - Project: A simple domain-specific language (DSL) that creates a new, custom control structure that doesn't natively exist in the language.
+10. Configuration: From Markups to Executables
+    - Extended Reading: TBD
+    - Language: JSON/YAML, HTML, Lua, Nix, Prolog
+	- Project: TBD
 
-10. Systems, Runtimes, and Oracles
+11. Macros and Homoiconicity
+    - Extended Reading: Paul Graham, _The Roots of Lisp_.
+    - Language: Common Lisp or Clojure.
+    - Project: A simple domain-specific language (DSL) that creates a new, custom control structure that doesn't natively exist in the language.
+
+12. Reflection and Meta-object Protocols
+    - Extended Reading: selected sections from _The Art of the Metaobject Protocol_.
+    - Language: Smalltalk-inspired languages.
+    - Project: TBD
+
+13. Systems, Runtimes, and Oracles
     - Extended Reading: Joe Armstrong, _Making reliable distributed systems in the presence of software errors_.
     - Language: Erlang or Elixir.
     - Project: A simple VM with garbage collection and supervisor tree.
+
+## Notes and Problems
+1. About "language": it's almost impossible to teach and learn so many languages at a time. Consider using, for example, C++, Ruby, or Racket, as a gotta-catch-em-all.
+2. About "project": it's impossible to complete all the projects. We need to let our collaborators or students simply pick up some of them.
+
+## Acknowledgment
+
+I would like to express my gratitude to 翕然, 橄榄菜 & members in 泡学会 for reviewing and revising this course project.
